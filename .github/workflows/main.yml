@@ -1,0 +1,22 @@
+name: Deployment
+run-name: Manual Deployment
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select the environment to deploy to"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deployment
+        run: echo "Deploy to ${{ inputs.environment }}"
