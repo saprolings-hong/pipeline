@@ -10,10 +10,13 @@ on:
         type: choice
         options:
           - dev
+          - prod
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: prod
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
