@@ -26,5 +26,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Checkout code with custom action
+        uses: ./.github/actions/checkout
+
       - name: Deployment
         run: echo "Deploy to ${{ inputs.environment }}"
