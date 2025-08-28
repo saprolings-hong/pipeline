@@ -10,10 +10,18 @@ on:
         type: choice
         options:
           - dev
+          - prod
 
 jobs:
+  common-workflow:
+    uses: ./.github/workflows/common.yml
+    with:
+      node-version: "18"
+
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: prod
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
