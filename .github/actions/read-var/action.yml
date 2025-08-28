@@ -1,0 +1,9 @@
+name: Read Vars
+
+runs:
+  using: "composite"
+  steps:
+    - name: Read Vars
+      shell: bash
+      run: |
+        echo "${IMAGE_TAG} in read-var action"

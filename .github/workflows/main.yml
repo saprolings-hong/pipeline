@@ -37,3 +37,6 @@ jobs:
           echo "DEV_SECRET= ${{ secrets.DEV_SECRET }}"
           echo "PROD_VAR= ${{ vars.PROD_VAR }}"
           echo "PROD_SECRET= ${{ secrets.PROD_SECRET }}"
+
+      - name: Read Vars
+        uses: ./.github/actions/read-var
