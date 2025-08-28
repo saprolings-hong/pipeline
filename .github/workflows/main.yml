@@ -13,10 +13,10 @@ on:
           - prod
 
 jobs:
-  common-workflow:
-    uses: ./.github/workflows/common.yml
-    with:
-      node-version: "18"
+  # common-workflow:
+  #   uses: ./.github/workflows/common.yml
+  #   with:
+  #     node-version: "18"
 
   deploy:
     runs-on: ubuntu-latest
@@ -33,3 +33,7 @@ jobs:
         run: |
           echo "Deploy to ${{ inputs.environment }}"
           echo "IMAGE_TAG = ${IMAGE_TAG}"
+          echo "DEV_VAR= ${{ vars.DEV_VAR }}"
+          echo "DEV_SECRET= ${{ secrets.DEV_SECRET }}"
+          echo "PROD_VAR= ${{ vars.PROD_VAR }}"
+          echo "PROD_SECRET= ${{ secrets.PROD_SECRET }}"
