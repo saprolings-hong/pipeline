@@ -9,5 +9,14 @@ runs:
     - name: Set image tag
       shell: bash
       run: |
-        TAG="${GITHUB_REF}-${GITHUB_RUN_NUMBER}"
+        REPO_NAME="${GITHUB_REPOSITORY#*/}"
+        # remove refs/heads and replace slashes (/) with dashes (-)
+        BRANCH_NAME="${GITHUB_REF#refs/heads/}" && BRANCH_NAME="${BRANCH_NAME//\//-}"
+
+        if [ "$BRANCH_NAME" == "main" ]; then
+          TAG="${REPO_NAME}-${GITHUB_RUN_NUMBER}"
+        else
+          TAG="${REPO_NAME}-${BRANCH_NAME}-${GITHUB_RUN_NUMBER}"
+        fi
+
         echo "IMAGE_TAG=$TAG" >> $GITHUB_ENV
