@@ -30,4 +30,6 @@ jobs:
         uses: ./.github/actions/checkout
 
       - name: Deployment
-        run: echo "Deploy to ${{ inputs.environment }}"
+        run: |
+          echo "Deploy to ${{ inputs.environment }}"
+          echo "IMAGE_TAG = ${IMAGE_TAG}"

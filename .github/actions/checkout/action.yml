@@ -9,5 +9,5 @@ runs:
     - name: Set image tag
       shell: bash
       run: |
-        IMAGE_TAG="${GITHUB_REF_NAME}-${GITHUB_RUN_NUMBER}"
-        echo "IMAGE_TAG" >> $GITHUB_ENV
+        TAG="${GITHUB_REF}-${GITHUB_RUN_NUMBER}"
+        echo "IMAGE_TAG=$TAG" >> $GITHUB_ENV
