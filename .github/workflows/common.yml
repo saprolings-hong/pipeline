@@ -28,6 +28,4 @@ jobs:
         run: |
           echo "Trigger manual aws build"
 
-      - name: Print Env
-        run: |
-          echo "print env in aws build"
+      # create PR
