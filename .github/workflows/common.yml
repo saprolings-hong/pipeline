@@ -23,3 +23,7 @@ jobs:
           echo "DEV_SECRET= ${{ secrets.DEV_SECRET }}"
           echo "PROD_VAR= ${{ vars.PROD_VAR }}"
           echo "PROD_SECRET= ${{ secrets.PROD_SECRET }}"
+
+      - name: Trigger AWS build
+        run: |
+          echo "Trigger aws build"
