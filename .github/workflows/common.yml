@@ -27,3 +27,7 @@ jobs:
       - name: Trigger AWS build
         run: |
           echo "Trigger manual aws build"
+
+      - name: Print Env
+        run: |
+          echo "print env in aws build"
