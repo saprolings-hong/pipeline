@@ -26,4 +26,4 @@ jobs:
 
       - name: Trigger AWS build
         run: |
-          echo "Trigger aws build"
+          echo "Trigger manual aws build"
